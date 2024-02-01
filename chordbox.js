@@ -160,6 +160,7 @@ class ChordBox {
         string: this.chord[i][0],
         fret: this.chord[i][1],
         label: this.chord.length > 2 ? this.chord[i][2] : undefined,
+        color: this.chord.length > 3 ? this.chord[i][3] : undefined,
       });
     }
 
@@ -169,7 +170,9 @@ class ChordBox {
     }
   }
 
-  lightUp({ string, fret, label }) {
+  lightUp({
+    string, fret, label, color,
+  }) {
     const stringNum = this.numStrings - string;
     const shiftPosition = this.position === 1 && this.positionText === 1 ? this.positionText : 0;
 
@@ -188,8 +191,8 @@ class ChordBox {
         .circle()
         .move(x, y - this.fretSpacing / 2)
         .radius(this.params.circleRadius || this.metrics.circleRadius)
-        .stroke({ color: this.params.strokeColor, width: this.params.strokeWidth })
-        .fill(fretNum > 0 ? this.params.strokeColor : this.params.bgColor);
+        .stroke({ color: color || this.params.strokeColor, width: this.params.strokeWidth })
+        .fill(color || (fretNum > 0 ? this.params.strokeColor : this.params.bgColor));
     } else {
       this.drawText(x, y - this.fretSpacing, 'X');
     }
