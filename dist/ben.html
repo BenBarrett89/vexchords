@@ -1,0 +1,72 @@
+<html>
+  <head>
+    <title>
+      VexChords Test
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta charset="UTF-8" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Lobster+Two|Bowlby+One+SC|Swanky+and+Moo+Moo|Marvel"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="vexchords.dev.js"></script>
+  </head>
+  <body>
+    <div id="drawing" style="text-align: center;"></div>
+    <script>
+      const sel = document.getElementById('drawing');
+      const draw = vexchords.draw;
+
+      // ♭
+
+      const root = '#000000ff'
+      const flatTwo = '#249215ff'
+      const two = '#14aa00ff'
+      const flatThree = '#15927cff'
+      const three = '#00aa8cff'
+      const four = '#0028aaff'
+      const sharpFour = '#0028aaff'
+      const flatFive = '#6d1592ff'
+      const five = '#7800aaff'
+      const flatSix = '#921541ff'
+      const six = '#aa003cff'
+      const flatSeven = '#925015ff'
+      const seven = '#aa5000ff'
+
+      draw(
+         sel,
+        {
+          chord: [
+            //[6,1,'R',root],
+            [6,'x'],
+            //[5,1,'R',root],
+            [5,'x'],
+            [4,1,'R',root],
+            [3,3,'5',five],
+            [2,2,'♭7',flatSeven],
+            [1,2,'♭3',flatThree]
+            //[1,'x']
+          ],
+          //barres: [
+          //  {fromString: 5, toString: 1, fret: 1}
+          //],
+        },
+        {
+          width: 300,
+          height: 440,
+          numStrings: 6,
+          numFrets: 3,
+          defaultColor: '#666',
+          strokeWidth: 2,
+          fretWidth: 2,
+          circleRadius: 300 / 18,
+          fontWeight: 'normal',
+          showTuning: false,
+          bridgeColor: '#444',
+          labelWeight: '600',
+        }
+      );
+    </script>
+  </body>
+</html>
