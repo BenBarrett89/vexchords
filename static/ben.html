@@ -18,6 +18,8 @@
       const sel = document.getElementById('drawing');
       const draw = vexchords.draw;
 
+      // export NODE_OPTIONS=--openssl-legacy-provider
+
       // ♭
 
       const root = '#000000ff'
@@ -38,14 +40,15 @@
          sel,
         {
           chord: [
-            //[6,1,'R',root],
+            //[6,3,'R',root],
             [6,'x'],
-            //[5,1,'R',root],
+            //[5,3,'R',root],
             [5,'x'],
-            [4,1,'R',root],
-            [3,3,'5',five],
-            [2,2,'♭7',flatSeven],
-            [1,2,'♭3',flatThree]
+            [4,3,'R',root],
+            [3,1,'♭3',flatThree],
+            [2,4,'♭7',flatSeven],
+            //[2,'x'],
+            [1,3,'9',two]
             //[1,'x']
           ],
           //barres: [
@@ -56,7 +59,7 @@
           width: 300,
           height: 440,
           numStrings: 6,
-          numFrets: 3,
+          numFrets: 4,
           defaultColor: '#666',
           strokeWidth: 2,
           fretWidth: 2,
